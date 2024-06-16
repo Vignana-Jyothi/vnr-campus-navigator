@@ -1,11 +1,11 @@
 package com.vnr.campusnavigator
 
-
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 
@@ -38,15 +38,18 @@ class HighlightView(context: Context, attrs: AttributeSet) : View(context, attrs
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        Log.d("HighlightView", "onDraw called")
         for (room in roomCoordinates) {
             if (touchX >= room[0] && touchX <= room[2] && touchY >= room[1] && touchY <= room[3]) {
+                Log.d("HighlightView", "Drawing rect at: $touchX, $touchY")
                 canvas.drawRect(room[0], room[1], room[2], room[3], paint)
             }
         }
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        if (event.action == MotionEvent.ACTION_MOVE) {
+        Log.d("HighlightView", "onTouchEvent called: ${event.action}")
+        if (event.action == MotionEvent.ACTION_MOVE || event.action == MotionEvent.ACTION_DOWN) {
             touchX = event.x
             touchY = event.y
             invalidate()
