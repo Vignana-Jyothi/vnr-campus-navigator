@@ -21,23 +21,28 @@ class HighlightView(context: Context, attrs: AttributeSet) : View(context, attrs
     }
     private var touchX = 0f
     private var touchY = 0f
+    private var selectedRoom: String? = null
 
-    private val roomCoordinates = arrayOf(
-        floatArrayOf(10f, 50f, 90f, 110f),  // Room 202
-        floatArrayOf(10f, 110f, 90f, 170f), // Room 204
-        floatArrayOf(10f, 170f, 90f, 230f), // Room 206
-        floatArrayOf(15f, 230f, 100f, 290f), // Room 208
-        floatArrayOf(15f, 290f, 100f, 345f), // Room 210
-        floatArrayOf(15f, 345f, 100f, 430f), // Room 212
-        floatArrayOf(15f, 430f, 100f, 515f), // Room 214
-        floatArrayOf(15f, 515f, 100f, 600f), // Room 216
-        floatArrayOf(10f, 600f, 65f, 705f),  // Room 218
-        floatArrayOf(120f, 50f, 210f, 110f), // Room 203
-        floatArrayOf(120f, 110f, 210f, 170f), // Room 205
-        floatArrayOf(120f, 170f, 210f, 230f), // Room 207
-        floatArrayOf(120f, 230f, 210f, 290f)  // Room 209
-        // Add more room coordinates as needed
+    private val roomCoordinates = mapOf(
+        "202" to floatArrayOf(10f, 50f, 90f, 110f),
+        "204" to floatArrayOf(10f, 110f, 90f, 170f),
+        "206" to floatArrayOf(10f, 170f, 90f, 230f),
+        "208" to floatArrayOf(15f, 230f, 100f, 290f),
+        "210" to floatArrayOf(15f, 290f, 100f, 345f),
+        "212" to floatArrayOf(15f, 345f, 100f, 430f),
+        "214" to floatArrayOf(15f, 430f, 100f, 515f),
+        "216" to floatArrayOf(15f, 515f, 100f, 600f),
+        "218" to floatArrayOf(10f, 600f, 65f, 705f),
+        "203" to floatArrayOf(120f, 50f, 210f, 110f),
+        "205" to floatArrayOf(120f, 110f, 210f, 170f),
+        "207" to floatArrayOf(120f, 170f, 210f, 230f),
+        "209" to floatArrayOf(120f, 230f, 210f, 290f)
     )
+
+    fun setSelectedRoom(room: String) {
+        selectedRoom = room
+        invalidate()
+    }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -69,13 +74,26 @@ class HighlightView(context: Context, attrs: AttributeSet) : View(context, attrs
         Log.d("HighlightView", "ImageView width: ${imageView.width}, height: ${imageView.height}")
         Log.d("HighlightView", "Drawable width: $imageWidth, height: $imageHeight")
         Log.d("HighlightView", "Scale factor: $scaleFactor")
-        Log.d("HighlightView", "Image Scale factor: $imageScaleFactor")
+        Log.d("HighlightView", "ImageScale factor: $imageScaleFactor")
         Log.d("HighlightView", "Offsets - Left: $leftOffset, Top: $topOffset")
         Log.d("HighlightView", "Touch coordinates: $touchX, $touchY")
 
-        for (room in roomCoordinates) {
+        selectedRoom?.let { roomKey ->
+            val room = roomCoordinates[roomKey]
+            if (room != null) {
+                val adjustedX1 = room[0] * scaleFactor * imageScaleFactor + leftOffset
+                val adjustedY1 = room[1] * scaleFactor * imageScaleFactor + topOffset
+                val adjustedX2 = room[2] * scaleFactor * imageScaleFactor + leftOffset
+                val adjustedY2 = room[3] * scaleFactor * imageScaleFactor + topOffset
+                Log.d("HighlightView", "Drawing rect at: $adjustedX1, $adjustedY1, $adjustedX2, $adjustedY2")
+                canvas.drawRect(adjustedX1, adjustedY1, adjustedX2, adjustedY2, paint)
+            }
+        }
+
+        // Draw rectangle based on touch coordinates
+        for (room in roomCoordinates.values) {
             val adjustedX1 = room[0] * scaleFactor * imageScaleFactor + leftOffset
-            val adjustedY1 = room[1] * scaleFactor * imageScaleFactor  + topOffset
+            val adjustedY1 = room[1] * scaleFactor * imageScaleFactor + topOffset
             val adjustedX2 = room[2] * scaleFactor * imageScaleFactor + leftOffset
             val adjustedY2 = room[3] * scaleFactor * imageScaleFactor + topOffset
 

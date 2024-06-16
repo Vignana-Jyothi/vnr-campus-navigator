@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <Spinner
+        android:id="@+id/room_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"/>
+    
     <ImageView
         android:id="@+id/floor_map"
         android:layout_width="match_parent"
