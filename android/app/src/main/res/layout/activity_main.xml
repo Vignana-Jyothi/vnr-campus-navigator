@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <Spinner
         android:id="@+id/room_selector"
         android:layout_width="wrap_content"
@@ -15,11 +14,12 @@
         android:layout_marginTop="16dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"/>
-    
+
     <ImageView
         android:id="@+id/floor_map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/room_selector"
         android:src="@drawable/example_floormap"
         android:scaleType="fitCenter" />
 
@@ -27,6 +27,6 @@
         android:id="@+id/highlight_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/room_selector"
         android:background="@android:color/transparent" />
-
 </RelativeLayout>

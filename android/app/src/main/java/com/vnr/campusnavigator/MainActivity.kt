@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var highlightView: HighlightView
     private lateinit var roomSelector: Spinner
+    private var selectedRoom: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +32,27 @@ class MainActivity : AppCompatActivity() {
         // Handle Spinner selection
         roomSelector.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                val selectedRoom = roomNumbers[position]
-                highlightView.setSelectedRoom(selectedRoom)
+                selectedRoom = roomNumbers[position]
+                highlightView.setSelectedRoom(selectedRoom!!)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // Do nothing
             }
         }
+
+        // Restore the selected room if available
+        savedInstanceState?.let {
+            selectedRoom = it.getString("selectedRoom")
+            selectedRoom?.let { room ->
+                roomSelector.setSelection(roomNumbers.indexOf(room))
+                highlightView.setSelectedRoom(room)
+            }
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("selectedRoom", selectedRoom)
     }
 }
