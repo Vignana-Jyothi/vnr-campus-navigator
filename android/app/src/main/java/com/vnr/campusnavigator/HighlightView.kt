@@ -4,15 +4,18 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.widget.ImageView
 
 class HighlightView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
+    private var rawImageHeight = 850
     private val paint = Paint().apply {
-        color = Color.YELLOW
+        color = Color.RED
         style = Paint.Style.STROKE
         strokeWidth = 5f
     }
@@ -39,10 +42,46 @@ class HighlightView(context: Context, attrs: AttributeSet) : View(context, attrs
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         Log.d("HighlightView", "onDraw called")
+
+        // Find the ImageView by ID
+        val imageView = (parent as View).findViewById<ImageView>(R.id.floor_map)
+        val drawable: Drawable = imageView.drawable
+        if (drawable == null) {
+            Log.e("HighlightView", "Drawable is null")
+            return
+        }
+
+        val imageWidth = drawable.intrinsicWidth
+        val imageHeight = drawable.intrinsicHeight
+
+        val scaleX = imageView.width.toFloat() / imageWidth
+        val scaleY = imageView.height.toFloat() / imageHeight
+
+        val scaleFactor = Math.min(scaleX, scaleY)
+        val imageScaleFactor = imageHeight.toFloat() / rawImageHeight.toFloat()
+
+        val scaledWidth = imageWidth * scaleFactor
+        val scaledHeight = imageHeight * scaleFactor
+
+        val leftOffset = (imageView.width - scaledWidth) / 2
+        val topOffset = (imageView.height - scaledHeight) / 2
+
+        Log.d("HighlightView", "ImageView width: ${imageView.width}, height: ${imageView.height}")
+        Log.d("HighlightView", "Drawable width: $imageWidth, height: $imageHeight")
+        Log.d("HighlightView", "Scale factor: $scaleFactor")
+        Log.d("HighlightView", "Image Scale factor: $imageScaleFactor")
+        Log.d("HighlightView", "Offsets - Left: $leftOffset, Top: $topOffset")
+        Log.d("HighlightView", "Touch coordinates: $touchX, $touchY")
+
         for (room in roomCoordinates) {
-            if (touchX >= room[0] && touchX <= room[2] && touchY >= room[1] && touchY <= room[3]) {
-                Log.d("HighlightView", "Drawing rect at: $touchX, $touchY")
-                canvas.drawRect(room[0], room[1], room[2], room[3], paint)
+            val adjustedX1 = room[0] * scaleFactor * imageScaleFactor + leftOffset
+            val adjustedY1 = room[1] * scaleFactor * imageScaleFactor  + topOffset
+            val adjustedX2 = room[2] * scaleFactor * imageScaleFactor + leftOffset
+            val adjustedY2 = room[3] * scaleFactor * imageScaleFactor + topOffset
+
+            if (touchX >= adjustedX1 && touchX <= adjustedX2 && touchY >= adjustedY1 && touchY <= adjustedY2) {
+                Log.d("HighlightView", "Drawing rect at: $adjustedX1, $adjustedY1, $adjustedX2, $adjustedY2")
+                canvas.drawRect(adjustedX1, adjustedY1, adjustedX2, adjustedY2, paint)
             }
         }
     }
