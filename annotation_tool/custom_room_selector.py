@@ -38,31 +38,26 @@ for (x1, y1, x2, y2) in room_boxes:
     color = get_random_color()
     cv2.rectangle(annotated_img, (x1, y1), (x2, y2), color, 2)
 
-# Mouse callback function to handle clicks
-def select_room(event, x, y, flags, param):
-    if event == cv2.EVENT_LBUTTONDOWN:
-        selected_rooms = [box for box in room_boxes if box[0] <= x <= box[2] and box[1] <= y <= box[3]]
-        if selected_rooms:
-            selected_img = img.copy()
-            for box in selected_rooms:
-                cv2.rectangle(selected_img, (box[0], box[1]), (box[2], box[3]), (0, 255, 0), 2)
-            cv2.imshow('Select Room', selected_img)
-            
-            # Wait for the user to select a room
-            room_idx = int(input(f"Select a room by entering the index (0 to {len(selected_rooms) - 1}): "))
-            if 0 <= room_idx < len(selected_rooms):
-                selected_box = selected_rooms[room_idx]
-                coordinates_str = f"{selected_box[0]},{selected_box[1]},{selected_box[2]},{selected_box[3]}"
-                pyperclip.copy(coordinates_str)
-                print(f"Coordinates {coordinates_str} copied to clipboard.")
-
-# Display the image and set mouse callback
-cv2.imshow('Annotated Image', annotated_img)
-cv2.setMouseCallback('Annotated Image', select_room)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-
 # Save the annotated image
 output_image_path = 'annotated_image2.png'
 cv2.imwrite(output_image_path, annotated_img)
 print(f"Annotated image saved to {output_image_path}")
+
+# Display the annotated image
+cv2.imshow('Annotated Image', annotated_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# Print the room coordinates for user selection
+for i, (x1, y1, x2, y2) in enumerate(room_boxes):
+    print(f"Room {i}: ({x1}, {y1}, {x2}, {y2})")
+
+# Prompt the user to select a room by index
+room_idx = int(input(f"Select a room by entering the index (0 to {len(room_boxes) - 1}): "))
+if 0 <= room_idx < len(room_boxes):
+    selected_box = room_boxes[room_idx]
+    coordinates_str = f"{selected_box[0]},{selected_box[1]},{selected_box[2]},{selected_box[3]}"
+    pyperclip.copy(coordinates_str)
+    print(f"Coordinates {coordinates_str} copied to clipboard.")
+else:
+    print("Invalid index selected.")
