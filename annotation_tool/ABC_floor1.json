@@ -1,51 +1,541 @@
 [
-    {"room_number": "A201", "type": "Classroom", "name": "Classroom", "coordinates": [10, 50, 90, 110]},
-    {"room_number": "A202", "type": "Lab", "name": "EDC Lab", "coordinates": [10, 110, 90, 170]},
-    {"room_number": "A203", "type": "Lab", "name": "EDC Lab", "coordinates": [10, 170, 90, 230]},
-    {"room_number": "A204", "type": "Toilet", "name": "Gents Toilet", "coordinates": [15, 230, 100, 290]},
-    {"room_number": "A205", "type": "Toilet", "name": "Gents Toilet Staff", "coordinates": [15, 290, 100, 345]},
-    {"room_number": "A206", "type": "Lab", "name": "MPMC Lab", "coordinates": [15, 345, 100, 430]},
-    {"room_number": "A207", "type": "Lab", "name": "Analog Communication/Digital Communication Lab", "coordinates": [15, 430, 100, 515]},
-    {"room_number": "A208", "type": "Lab", "name": "VLSI & ECAD Lab", "coordinates": [15, 515, 100, 600]},
-    {"room_number": "A209", "type": "Lab", "name": "LDICA Lab-1", "coordinates": [10, 600, 65, 705]},
-    {"room_number": "A210", "type": "Staff Room", "name": "L.T Staff", "coordinates": [120, 50, 210, 110]},
-    {"room_number": "A211", "type": "Toilet", "name": "Ladies Toilet", "coordinates": [120, 110, 210, 170]},
-    {"room_number": "A212", "type": "Lab", "name": "LDICA Lab-2", "coordinates": [120, 170, 210, 230]},
-    {"room_number": "A213", "type": "Lab", "name": "Process Control Instrumentation Lab-EIE", "coordinates": [120, 230, 210, 290]},
-    {"room_number": "B201", "type": "Faculty Room", "name": "ECE Faculty Room", "coordinates": [10, 50, 90, 110]},
-    {"room_number": "B202", "type": "HOD Room", "name": "ECE HOD Room", "coordinates": [10, 110, 90, 170]},
-    {"room_number": "B203", "type": "Faculty Room", "name": "ECE Faculty Room", "coordinates": [10, 170, 90, 230]},
-    {"room_number": "B204", "type": "Library", "name": "ECE Department Library", "coordinates": [15, 230, 100, 290]},
-    {"room_number": "B205", "type": "Faculty Room", "name": "ECE Faculty Room", "coordinates": [15, 290, 100, 345]},
-    {"room_number": "B206", "type": "Faculty Room", "name": "ECE Faculty Room", "coordinates": [15, 345, 100, 430]},
-    {"room_number": "B207", "type": "Lab", "name": "Industrial Instrumentation Lab", "coordinates": [15, 430, 100, 515]},
-    {"room_number": "B208", "type": "Lab", "name": "Analytical Instrumentation Lab-EIE", "coordinates": [15, 515, 100, 600]},
-    {"room_number": "B209", "type": "Classroom", "name": "Classroom", "coordinates": [10, 600, 65, 705]},
-    {"room_number": "B210", "type": "Staff Room", "name": "G.T Staff", "coordinates": [120, 50, 210, 110]},
-    {"room_number": "B211", "type": "Staff Room", "name": "G.T", "coordinates": [120, 110, 210, 170]},
-    {"room_number": "B212", "type": "Classroom", "name": "Classroom", "coordinates": [120, 170, 210, 230]},
-    {"room_number": "B213", "type": "Classroom", "name": "Classroom", "coordinates": [120, 230, 210, 290]},
-    {"room_number": "B214", "type": "Classroom", "name": "Classroom", "coordinates": [10, 50, 90, 110]},
-    {"room_number": "B215", "type": "Classroom", "name": "Classroom", "coordinates": [10, 110, 90, 170]},
-    {"room_number": "B216", "type": "Classroom", "name": "Classroom", "coordinates": [10, 170, 90, 230]},
-    {"room_number": "B217", "type": "Faculty Room", "name": "EIE Faculty Room", "coordinates": [15, 230, 100, 290]},
-    {"room_number": "B218", "type": "HOD Room", "name": "EIE HOD Room", "coordinates": [15, 290, 100, 345]},
-    {"room_number": "B219", "type": "Faculty Room", "name": "EIE Faculty Room", "coordinates": [15, 345, 100, 430]},
-    {"room_number": "B220", "type": "Library", "name": "EIE Library", "coordinates": [15, 430, 100, 515]},
-    {"room_number": "B221", "type": "Office", "name": "TEQIP Office", "coordinates": [15, 515, 100, 600]},
-    {"room_number": "B222", "type": "Library", "name": "ECE Department Library", "coordinates": [10, 600, 65, 705]},
-    {"room_number": "C201", "type": "Classroom", "name": "Classroom", "coordinates": [120, 50, 210, 110]},
-    {"room_number": "C202", "type": "Classroom", "name": "Classroom", "coordinates": [120, 110, 210, 170]},
-    {"room_number": "C203", "type": "Classroom", "name": "Classroom", "coordinates": [120, 170, 210, 230]},
-    {"room_number": "C204", "type": "Lab", "name": "NI Academy/Virtual Instrumentation Lab", "coordinates": [120, 230, 210, 290]},
-    {"room_number": "C205", "type": "Lab", "name": "MPMC Lab", "coordinates": [10, 50, 90, 110]},
-    {"room_number": "C206", "type": "Lab", "name": "RF & Microwave Engineering Lab", "coordinates": [10, 110, 90, 170]},
-    {"room_number": "C207", "type": "Lab", "name": "RF & Microwave Engineering Lab", "coordinates": [10, 170, 90, 230]},
-    {"room_number": "C208", "type": "Lab", "name": "DSP Lab/CP Lab", "coordinates": [15, 230, 100, 290]},
-    {"room_number": "C209", "type": "Lab", "name": "Advanced English Communication Skills Lab-I", "coordinates": [15, 290, 100, 345]},
-    {"room_number": "C210", "type": "Lab", "name": "Advanced English Communication Skills Lab-II", "coordinates": [15, 345, 100, 430]},
-    {"room_number": "C211", "type": "Staff Room", "name": "G.T", "coordinates": [15, 430, 100, 515]},
-    {"room_number": "C212", "type": "Classroom", "name": "Classroom", "coordinates": [15, 515, 100, 600]},
-    {"room_number": "C213", "type": "Classroom", "name": "Classroom", "coordinates": [10, 600, 65, 705]},
-    {"room_number": "C214", "type": "Classroom", "name": "Classroom", "coordinates": [120, 50, 210, 110]}
+    {
+        "room_number": "A201",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            411,
+            673,
+            578,
+            838
+        ]
+    },
+    {
+        "room_number": "A202",
+        "type": "Lab",
+        "name": "EDC Lab",
+        "coordinates": [
+            414,
+            465,
+            578,
+            665
+        ]
+    },
+    {
+        "room_number": "A203",
+        "type": "Lab",
+        "name": "EDC Lab",
+        "coordinates": [
+            412,
+            207,
+            579,
+            413
+        ]
+    },
+    {
+        "room_number": "A204",
+        "type": "Toilet",
+        "name": "Gents Toilet",
+        "coordinates": [
+            411,
+            155,
+            582,
+            203
+        ]
+    },
+    {
+        "room_number": "A205",
+        "type": "Toilet",
+        "name": "Gents Toilet Staff",
+        "coordinates": [
+            413,
+            108,
+            583,
+            156
+        ]
+    },
+    {
+        "room_number": "A206",
+        "type": "Lab",
+        "name": "MPMC Lab",
+        "coordinates": [
+            15,
+            345,
+            100,
+            430
+        ]
+    },
+    {
+        "room_number": "A207",
+        "type": "Lab",
+        "name": "Analog Communication/Digital Communication Lab",
+        "coordinates": [
+            15,
+            430,
+            100,
+            515
+        ]
+    },
+    {
+        "room_number": "A208",
+        "type": "Lab",
+        "name": "VLSI & ECAD Lab",
+        "coordinates": [
+            15,
+            515,
+            100,
+            600
+        ]
+    },
+    {
+        "room_number": "A209",
+        "type": "Lab",
+        "name": "LDICA Lab-1",
+        "coordinates": [
+            10,
+            600,
+            65,
+            705
+        ]
+    },
+    {
+        "room_number": "A210",
+        "type": "Staff Room",
+        "name": "L.T Staff",
+        "coordinates": [
+            120,
+            50,
+            210,
+            110
+        ]
+    },
+    {
+        "room_number": "A211",
+        "type": "Toilet",
+        "name": "Ladies Toilet",
+        "coordinates": [
+            120,
+            110,
+            210,
+            170
+        ]
+    },
+    {
+        "room_number": "A212",
+        "type": "Lab",
+        "name": "LDICA Lab-2",
+        "coordinates": [
+            120,
+            170,
+            210,
+            230
+        ]
+    },
+    {
+        "room_number": "A213",
+        "type": "Lab",
+        "name": "Process Control Instrumentation Lab-EIE",
+        "coordinates": [
+            120,
+            230,
+            210,
+            290
+        ]
+    },
+    {
+        "room_number": "B201",
+        "type": "Faculty Room",
+        "name": "ECE Faculty Room",
+        "coordinates": [
+            10,
+            50,
+            90,
+            110
+        ]
+    },
+    {
+        "room_number": "B202",
+        "type": "HOD Room",
+        "name": "ECE HOD Room",
+        "coordinates": [
+            10,
+            110,
+            90,
+            170
+        ]
+    },
+    {
+        "room_number": "B203",
+        "type": "Faculty Room",
+        "name": "ECE Faculty Room",
+        "coordinates": [
+            10,
+            170,
+            90,
+            230
+        ]
+    },
+    {
+        "room_number": "B204",
+        "type": "Library",
+        "name": "ECE Department Library",
+        "coordinates": [
+            15,
+            230,
+            100,
+            290
+        ]
+    },
+    {
+        "room_number": "B205",
+        "type": "Faculty Room",
+        "name": "ECE Faculty Room",
+        "coordinates": [
+            15,
+            290,
+            100,
+            345
+        ]
+    },
+    {
+        "room_number": "B206",
+        "type": "Faculty Room",
+        "name": "ECE Faculty Room",
+        "coordinates": [
+            15,
+            345,
+            100,
+            430
+        ]
+    },
+    {
+        "room_number": "B207",
+        "type": "Lab",
+        "name": "Industrial Instrumentation Lab",
+        "coordinates": [
+            15,
+            430,
+            100,
+            515
+        ]
+    },
+    {
+        "room_number": "B208",
+        "type": "Lab",
+        "name": "Analytical Instrumentation Lab-EIE",
+        "coordinates": [
+            15,
+            515,
+            100,
+            600
+        ]
+    },
+    {
+        "room_number": "B209",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            10,
+            600,
+            65,
+            705
+        ]
+    },
+    {
+        "room_number": "B210",
+        "type": "Staff Room",
+        "name": "G.T Staff",
+        "coordinates": [
+            120,
+            50,
+            210,
+            110
+        ]
+    },
+    {
+        "room_number": "B211",
+        "type": "Staff Room",
+        "name": "G.T",
+        "coordinates": [
+            120,
+            110,
+            210,
+            170
+        ]
+    },
+    {
+        "room_number": "B212",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            120,
+            170,
+            210,
+            230
+        ]
+    },
+    {
+        "room_number": "B213",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            120,
+            230,
+            210,
+            290
+        ]
+    },
+    {
+        "room_number": "B214",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            10,
+            50,
+            90,
+            110
+        ]
+    },
+    {
+        "room_number": "B215",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            10,
+            110,
+            90,
+            170
+        ]
+    },
+    {
+        "room_number": "B216",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            10,
+            170,
+            90,
+            230
+        ]
+    },
+    {
+        "room_number": "B217",
+        "type": "Faculty Room",
+        "name": "EIE Faculty Room",
+        "coordinates": [
+            15,
+            230,
+            100,
+            290
+        ]
+    },
+    {
+        "room_number": "B218",
+        "type": "HOD Room",
+        "name": "EIE HOD Room",
+        "coordinates": [
+            15,
+            290,
+            100,
+            345
+        ]
+    },
+    {
+        "room_number": "B219",
+        "type": "Faculty Room",
+        "name": "EIE Faculty Room",
+        "coordinates": [
+            15,
+            345,
+            100,
+            430
+        ]
+    },
+    {
+        "room_number": "B220",
+        "type": "Library",
+        "name": "EIE Library",
+        "coordinates": [
+            15,
+            430,
+            100,
+            515
+        ]
+    },
+    {
+        "room_number": "B221",
+        "type": "Office",
+        "name": "TEQIP Office",
+        "coordinates": [
+            15,
+            515,
+            100,
+            600
+        ]
+    },
+    {
+        "room_number": "B222",
+        "type": "Library",
+        "name": "ECE Department Library",
+        "coordinates": [
+            10,
+            600,
+            65,
+            705
+        ]
+    },
+    {
+        "room_number": "C201",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            120,
+            50,
+            210,
+            110
+        ]
+    },
+    {
+        "room_number": "C202",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            120,
+            110,
+            210,
+            170
+        ]
+    },
+    {
+        "room_number": "C203",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            120,
+            170,
+            210,
+            230
+        ]
+    },
+    {
+        "room_number": "C204",
+        "type": "Lab",
+        "name": "NI Academy/Virtual Instrumentation Lab",
+        "coordinates": [
+            120,
+            230,
+            210,
+            290
+        ]
+    },
+    {
+        "room_number": "C205",
+        "type": "Lab",
+        "name": "MPMC Lab",
+        "coordinates": [
+            10,
+            50,
+            90,
+            110
+        ]
+    },
+    {
+        "room_number": "C206",
+        "type": "Lab",
+        "name": "RF & Microwave Engineering Lab",
+        "coordinates": [
+            10,
+            110,
+            90,
+            170
+        ]
+    },
+    {
+        "room_number": "C207",
+        "type": "Lab",
+        "name": "RF & Microwave Engineering Lab",
+        "coordinates": [
+            10,
+            170,
+            90,
+            230
+        ]
+    },
+    {
+        "room_number": "C208",
+        "type": "Lab",
+        "name": "DSP Lab/CP Lab",
+        "coordinates": [
+            15,
+            230,
+            100,
+            290
+        ]
+    },
+    {
+        "room_number": "C209",
+        "type": "Lab",
+        "name": "Advanced English Communication Skills Lab-I",
+        "coordinates": [
+            15,
+            290,
+            100,
+            345
+        ]
+    },
+    {
+        "room_number": "C210",
+        "type": "Lab",
+        "name": "Advanced English Communication Skills Lab-II",
+        "coordinates": [
+            15,
+            345,
+            100,
+            430
+        ]
+    },
+    {
+        "room_number": "C211",
+        "type": "Staff Room",
+        "name": "G.T",
+        "coordinates": [
+            15,
+            430,
+            100,
+            515
+        ]
+    },
+    {
+        "room_number": "C212",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            15,
+            515,
+            100,
+            600
+        ]
+    },
+    {
+        "room_number": "C213",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            10,
+            600,
+            65,
+            705
+        ]
+    },
+    {
+        "room_number": "C214",
+        "type": "Classroom",
+        "name": "Classroom",
+        "coordinates": [
+            120,
+            50,
+            210,
+            110
+        ]
+    }
 ]
