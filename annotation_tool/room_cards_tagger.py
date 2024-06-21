@@ -62,11 +62,17 @@ if img is None:
 def update_display():
     global img, rectangles, current_room_index
     img_copy = img.copy()
-    print("About to draw")
     if rectangles[current_room_index] != (None, None, None, None):
-        print("drawing..")
         (ix, iy, x, y) = rectangles[current_room_index]
         cv2.rectangle(img_copy, (ix, iy), (x, y), (0, 0, 255), 2)  # Red rectangle for existing
+    # Display current room number
+    room_number_text = rooms_data[current_room_index]['room_number']
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    text_size = 2
+    text_thickness = 3
+    text_color = (255, 0, 0)  # Blue color in BGR
+    text_position = (img.shape[1] // 2 - 100, 50)  # Adjust position as needed
+    cv2.putText(img_copy, room_number_text, text_position, font, text_size, text_color, text_thickness, cv2.LINE_AA)
     cv2.imshow('image', img_copy)
 
 # Function to handle key press events

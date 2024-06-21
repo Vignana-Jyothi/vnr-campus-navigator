@@ -4,10 +4,10 @@
         "type": "Classroom",
         "name": "Classroom",
         "coordinates": [
-            411,
-            673,
-            578,
-            838
+            410,
+            672,
+            581,
+            843
         ]
     },
     {
@@ -59,10 +59,10 @@
         "type": "Lab",
         "name": "MPMC Lab",
         "coordinates": [
-            15,
-            345,
-            100,
-            430
+            635,
+            110,
+            873,
+            279
         ]
     },
     {
@@ -70,10 +70,10 @@
         "type": "Lab",
         "name": "Analog Communication/Digital Communication Lab",
         "coordinates": [
-            15,
-            430,
-            100,
-            515
+            638,
+            289,
+            794,
+            449
         ]
     },
     {
@@ -81,10 +81,10 @@
         "type": "Lab",
         "name": "VLSI & ECAD Lab",
         "coordinates": [
-            15,
-            515,
-            100,
-            600
+            878,
+            284,
+            1115,
+            448
         ]
     },
     {
@@ -92,10 +92,10 @@
         "type": "Lab",
         "name": "LDICA Lab-1",
         "coordinates": [
-            10,
-            600,
-            65,
-            705
+            877,
+            112,
+            1114,
+            280
         ]
     },
     {
@@ -103,10 +103,10 @@
         "type": "Staff Room",
         "name": "L.T Staff",
         "coordinates": [
-            120,
-            50,
-            210,
-            110
+            1171,
+            140,
+            1232,
+            217
         ]
     },
     {
@@ -114,10 +114,10 @@
         "type": "Toilet",
         "name": "Ladies Toilet",
         "coordinates": [
-            120,
-            110,
-            210,
-            170
+            1221,
+            220,
+            1313,
+            274
         ]
     },
     {
@@ -125,10 +125,10 @@
         "type": "Lab",
         "name": "LDICA Lab-2",
         "coordinates": [
-            120,
-            170,
-            210,
-            230
+            1171,
+            280,
+            1344,
+            451
         ]
     },
     {
@@ -136,10 +136,10 @@
         "type": "Lab",
         "name": "Process Control Instrumentation Lab-EIE",
         "coordinates": [
-            120,
-            230,
-            210,
-            290
+            1167,
+            585,
+            1340,
+            753
         ]
     },
     {
